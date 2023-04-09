@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>page web</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+        <style>
+       h1{
+        box-shadow: inset;
+        text-align: center;
+       }
+       p{
+        text-align: center;
+        font-size: 30px;
+        color: black;
+       }
+       .id{
+        color: chocolate;
+        font-size: 50px;
+        text-align: center;
+       }
+      .container{
+        background-color: whitesmoke;
+        font-size: 50px;
+        border-style: ridge; 
+        margin-bottom: 50px;
+        
+      }
+      
+      .bo{
+        text-align: center;
+        background-color: brown;
+        box-shadow: inset;
+        margin-bottom: 50px;
+        padding-bottom: 10px;
+      }
+      
+
+
+
+
+        </style>
+          <!-- ici j'incclus la biliotheque jQuery pour simplifier le code AJAX -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            setInterval(function(){
+              $.getJSON('/mesures.json', function(data){
+                $('#temperature').html(data.temperature.toFixed(2));
+                $('#pressure').html(data.pressure.toFixed(2));
+                $('#humidity').html(data.humidity.toFixed(2));
+                $('#altitude').html(data.altitude.toFixed(2));
+              });
+            }, 3000);
+          });
+        </script>
+        
+    </head>
+<body> 
+    <div class="bo">
+     <h1>BME280 WEB SERVER</h1>
+    </div> 
+      <div class="container">
+        <p class="bi-thermometer"style="font-size: 2rem; color: cornflowerblue;">TEMPERATURE  <span id="temperature"></span> &deg;C</p> <br>
+        </div>
+        <div class="container">
+        <p class="bi-moisture"style="font-size: 2rem; color: blueviolet;">HUMIDITY  <span id="humidity"></span> %</p><br>
+       </div>
+       <div class="container">
+        <p class="bi-speedometer"style="font-size: 2rem; color: darkred;">PRESSURE    <span id="pressure"></span> hPa</p><br>
+       </div>
+       <div class="container">
+        <p class="bi-triangle-fill"style="font-size: 2rem; color: black;">ALTITUDE     <span id="altitude"></span> m</p><br>
+       </div>
+
+      </div> 
+
+
+
+
+
+</body>
+
+</html>

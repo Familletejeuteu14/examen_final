@@ -1,0 +1,29 @@
+h1{
+  box-shadow: inset;
+  text-align: center;
+ }
+ p{
+  text-align: center;
+  font-size: 30px;
+  color: black;
+ }
+ .id{
+  color: chocolate;
+  font-size: 50px;
+  text-align: center;
+ }
+.container{
+  background-color: whitesmoke;
+  font-size: 50px;
+  border-style: ridge; 
+  margin-bottom: 50px;
+  
+}
+
+.bo{
+  text-align: center;
+  background-color: brown;
+  box-shadow: inset;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
