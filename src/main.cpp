@@ -1,3 +1,10 @@
+/*
+  Titre      : Projet Final
+  Auteur     : MAXIM TESSA 
+  Date       : 09/04/2023
+  Description: Un CAPTEUR BME280 qui affiche les données sur une page web   
+  Version    : 0.0.1
+*/
 
 // Import required libraries
 #include <Arduino.h>
