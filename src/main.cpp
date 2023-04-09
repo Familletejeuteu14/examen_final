@@ -9,11 +9,11 @@
 // Import required libraries
 #include <Arduino.h>
 #include "WiFi.h"
+#include <AsyncElegantOTA.h>
 #include "ESPAsyncWebServer.h"
 #include "SPIFFS.h"
-#include <ArduinoJson.h> // utilisé la bibliothèque ArduinoJson pour créer un objet JSON pour stocker les mesures du capteur BME280.
+#include <ArduinoJson.h> // bibliothèque ArduinoJson pour créer un objet JSON pour stocker les mesures du capteur BME280.
 #include <Wire.h>
-#include <SPI.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 
@@ -69,7 +69,12 @@ void setup(){
 
   server.serveStatic("/", SPIFFS, "/");
 
-  // Start server
+   // Demarre ElegantOTA
+  AsyncElegantOTA.begin(&server);
+  server.begin();
+  Serial.println("HTTP server started");
+
+  // initialisez le serveur
   server.begin();
 }
  
