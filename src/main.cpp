@@ -42,13 +42,13 @@ void setup(){
     while(1);
   }
 
-  // Initialize SPIFFS
+  // Initialisation SPIFFS
   if(!SPIFFS.begin(true)){
     Serial.println("An Error has occurred while mounting SPIFFS");
     return;
   }
 
-  // Connect to Wi-Fi
+  // Connection au Wi-Fi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
